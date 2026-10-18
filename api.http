@@ -1,0 +1,26 @@
+### 1. Probar conexión a la base de datos
+GET http://127.0.0.1:8000/probar-conexion
+
+### 2. Listar todos los vehículos
+GET http://127.0.0.1:8000/vehiculos
+
+### 3. Obtener un vehículo por ID (ejemplo con ID 1)
+GET http://127.0.0.1:8000/vehiculos/1
+
+### 4. Consultar el estado del vehículo (ejemplo con ID 1)
+GET http://127.0.0.1:8000/vehiculos/1/estado
+
+### 5. Listar comandos de un vehículo (ejemplo con ID 1)
+GET http://127.0.0.1:8000/vehiculos/1/comandos
+
+### 6. Enviar un movimiento (Ejemplo POST)
+POST http://127.0.0.1:8000/vehiculos/movimiento
+Content-Type: application/json
+
+{
+    "vehiculo_id": 1,
+    "comando_id": 1
+}
+
+### 7. Listar todas las demos
+GET http://127.0.0.1:8000/demos

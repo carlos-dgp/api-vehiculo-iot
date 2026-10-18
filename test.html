@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba WebSocket Vehículo</title>
+</head>
+<body>
+    <h1>Monitoreo de Vehículo por WebSocket</h1>
+    <div id="mensajes" style="background: #111; color: #0f0; padding: 15px; font-family: monospace; height: 300px; overflow-y: scroll;"></div>
+
+    <script>
+        const ws = new WebSocket("ws://127.0.0.1:8000/ws/vehiculos/1");
+        const divMensajes = document.getElementById("mensajes");
+
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            divMensajes.innerHTML += `<br>Recibido: ${JSON.stringify(data)}`;
+        };
+    </script>
+</body>
+</html>
